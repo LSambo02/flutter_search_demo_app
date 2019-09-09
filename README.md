@@ -1,6 +1,6 @@
 # flutter_search_demo_app
 
-A new Flutter application.
+Implementação de barra de pesquisa com recurso a RxDart.
 
 ## Getting Started
 
