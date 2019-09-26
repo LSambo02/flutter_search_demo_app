@@ -22,7 +22,7 @@ class _SearchPage extends State<SearchPage> {
     // TODO: implement build
     return Scaffold(
         appBar: AppBar(
-          title: Text("Grupos - Amigo Secreto DataBase"),
+          title: Text("Ache a Moça - Pesquisa módulo"),
           actions: <Widget>[
             IconButton(
                 icon: Icon(Icons.search),
