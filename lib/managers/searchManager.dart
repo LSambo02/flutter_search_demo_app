@@ -1,12 +1,10 @@
 import 'package:rxdart/rxdart.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_search_demo_app/pages/searchpage.dart';
 
+
+//determina como são passados para ui os resultados tratados pelo PublishSubject
 class SearchManager {
   //cntrola o conteudo que está sendo inserido
   final PublishSubject<String> _filterSubject = PublishSubject<String>();
-  //final PublishSubject<int> _counterSubject = PublishSubject<int>();
-
 
   //responsável por passar o resultado da pesquisa para streams
   Stream<List<String>> filteredNames({query}) =>
@@ -14,12 +12,6 @@ class SearchManager {
 
   //recebe cada input
   Sink<String> get sNomes => _filterSubject.sink;
-
-/*  Observable<int> get count$ => _counterSubject.stream;
-  void dispose() {
-    _counterSubject.close();
-    _filterSubject.close();
-  }*/
 
   List<String> lista = [
     'Ana',
@@ -34,32 +26,21 @@ class SearchManager {
 
   List<String> auxList = new List();
 
-
-  //filtra resultados, a partir do que está patente na barra de pesquisa
+  //filtra resultados, a partir do que está patente na área de pesquisa
   Future<List<String>> _resultados({query}) async {
-    print(query);
-    //pega o último valor patente
+    //pega o valor patente na área de pesquisa
     _filterSubject.listen((value) {
       print(value);
       if (value != '') {
         for (var aux in lista) {
-          if (aux.toLowerCase().contains(value.toLowerCase())) {
-            auxList.insert(0,aux);
-            break;
-            //_validateSearch(auxList);
-            print(aux);
-            // return auxList;
+          if (aux.toLowerCase().contains(value.toLowerCase()) && !auxList.contains(aux)) {
+            auxList.insert(0, aux);
           }
         }
-      }else{
+        //limpar a lista após apresentar resultados de um valor introduzido
         auxList = new List();
-        //return auxList;
-
       }
-
-      //print(auxList);
     });
     return auxList;
-
   }
 }

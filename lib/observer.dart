@@ -6,6 +6,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+//Observer é responsável por receber e passar os dados,
+// serve como intermediário, e indica o estado da mensagem
 class Observer<T> extends StatelessWidget {
   @required
   final Stream<T> stream;
@@ -26,7 +28,7 @@ class Observer<T> extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamBuilder(
       stream: stream,
-      //passar o contexto e a informação
+      //passar o contexto e a informação;
       builder: (context, AsyncSnapshot<T> snapshot) {
         if (snapshot.hasError) {
           return (onError != null)

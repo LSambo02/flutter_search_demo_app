@@ -1,4 +1,6 @@
-//Overseer é a classe responsável por reistar os managers usados para controlo de estado
+
+//Overseer é a classe responsável por registar
+// os managers usados para controlo de estado
 
 import 'searchManager.dart';
 

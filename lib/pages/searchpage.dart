@@ -27,7 +27,7 @@ class _SearchPage extends State<SearchPage> {
             IconButton(
                 icon: Icon(Icons.search),
                 onPressed: () {
-                  //chamamos  widget responsável por apresentar os resultados
+                  //chamamos o widget responsável por apresentar os resultados
                   // com o contexto e o delegado que deve ser passado o 'manager' como parâmetro
                   //que é o que gere o dado da pesquisa
                   showSearch(context: context, delegate: SearchNamesDelegate(manager: manager));

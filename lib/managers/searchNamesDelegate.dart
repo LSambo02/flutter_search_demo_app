@@ -3,7 +3,7 @@ import 'searchManager.dart';
 
 
 //Esta é uma implementação do SearchDelegate que tem os métodos
-// de controle de estado de barras de pesquisa
+// de controle de estado de SearchPages
 class SearchNamesDelegate extends SearchDelegate {
   final SearchManager manager;
 
@@ -29,8 +29,6 @@ class SearchNamesDelegate extends SearchDelegate {
   @override
   Widget buildResults(BuildContext context) {
 
-    //
-    print('xooo');
     // TODO: implement buildResults
     return Container();
   }
